@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light" />
+    <title>English Club · Membership Registration</title>
+    <meta
+      name="description"
+      content="Official registration for selected English Club members. Send your Tunisian phone number to join the club's official WhatsApp group."
+    />
+    <meta name="theme-color" content="#0C5643" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Instrument+Sans:wght@400;500;600&display=swap"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+
+  <body>
+    <!-- Quiet background ornament: concentric arcs, nothing interactive. -->
+    <div class="backdrop" aria-hidden="true">
+      <svg class="ornament ornament--top" viewBox="0 0 600 600" fill="none" focusable="false">
+        <circle cx="0" cy="0" r="180" stroke="currentColor" stroke-opacity="0.16" />
+        <circle cx="0" cy="0" r="270" stroke="currentColor" stroke-opacity="0.1" />
+        <circle cx="0" cy="0" r="360" stroke="currentColor" stroke-opacity="0.06" />
+      </svg>
+      <svg class="ornament ornament--bottom" viewBox="0 0 600 600" fill="none" focusable="false">
+        <circle cx="600" cy="600" r="150" stroke="currentColor" stroke-opacity="0.2" />
+        <circle cx="600" cy="600" r="240" stroke="currentColor" stroke-opacity="0.12" />
+        <circle cx="600" cy="600" r="330" stroke="currentColor" stroke-opacity="0.07" />
+        <circle class="ornament__gold" cx="600" cy="600" r="430" stroke-width="1.25" />
+      </svg>
+    </div>
+
+    <main class="shell">
+      <section class="card" aria-label="English Club membership registration">
+        <p class="masthead__eyebrow">Membership registration</p>
+
+        <div class="intro" id="intro">
+          <svg class="intro__emblem" viewBox="0 0 48 48" role="img" aria-label="English Club emblem">
+            <circle cx="24" cy="24" r="23" fill="#0C5643" />
+            <circle cx="24" cy="24" r="19.5" fill="none" stroke="#CBAF75" stroke-opacity="0.6" stroke-width="1" />
+            <path d="M24 13.5 34.5 18 24 22.5 13.5 18 24 13.5Z" fill="#FDF9EE" />
+            <path
+              d="M17.5 20.4v3.9c0 2.6 13 2.6 13 0v-3.9"
+              fill="none"
+              stroke="#FDF9EE"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path d="M34.5 18.6v4.2" stroke="#D9BC7E" stroke-width="1.6" stroke-linecap="round" />
+            <circle cx="34.5" cy="24.6" r="1.25" fill="#D9BC7E" />
+          </svg>
+
+          <p class="intro__wordmark">English Club</p>
+          <span class="intro__rule" aria-hidden="true"></span>
+
+          <h1 class="intro__title" id="welcome-title">Welcome to the team!</h1>
+          <p class="intro__text">
+            Congratulations on being selected! Please enter your phone number below to complete your
+            registration and join our <strong>official WhatsApp group</strong>.
+          </p>
+        </div>
+
+        <form class="form" id="registration-form" novalidate>
+          <div class="field" id="phone-field">
+            <div class="field__row">
+              <label class="field__label" for="phone">Phone number</label>
+              <span class="field__meta" id="field-meta">Tunisia · 8 digits</span>
+            </div>
+
+            <div class="phone">
+              <span class="phone__prefix" aria-hidden="true">+216</span>
+              <span class="sr-only" id="prefix-note">Country code +216 Tunisia. Enter the 8 digits after +216.</span>
+              <input
+                class="phone__input"
+                id="phone"
+                name="phone_number"
+                type="tel"
+                inputmode="numeric"
+                autocomplete="tel-national"
+                placeholder="XX XXX XXX"
+                enterkeyhint="go"
+                spellcheck="false"
+                aria-describedby="field-meta phone-error prefix-note"
+              />
+            </div>
+
+            <p class="field__error" id="phone-error" role="alert" hidden>
+              <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.4" />
+                <path d="M8 4.6v4.1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                <circle cx="8" cy="11.3" r="0.85" fill="currentColor" />
+              </svg>
+              <span id="phone-error-text"></span>
+            </p>
+          </div>
+
+          <div class="alert" id="submit-error" role="alert" hidden>
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path
+                d="M8 1.8 15 14.2H1L8 1.8Z"
+                stroke="currentColor"
+                stroke-width="1.3"
+                stroke-linejoin="round"
+              />
+              <path d="M8 6v3.4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" />
+              <circle cx="8" cy="11.7" r="0.8" fill="currentColor" />
+            </svg>
+            <span id="submit-error-text"></span>
+          </div>
+
+          <button class="submit" type="submit" id="submit-button">
+            <span class="submit__spinner" aria-hidden="true"></span>
+            <span id="submit-label">Submit Registration</span>
+          </button>
+
+          <p class="form__privacy">
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <rect x="3.2" y="7" width="9.6" height="6.6" rx="1.6" stroke="currentColor" stroke-width="1.3" />
+              <path
+                d="M5.6 7V5.2a2.4 2.4 0 0 1 4.8 0V7"
+                stroke="currentColor"
+                stroke-width="1.3"
+                stroke-linecap="round"
+              />
+            </svg>
+            <span>Your number is shared only with the club administration, to add you to the official WhatsApp group.</span>
+          </p>
+
+          <p class="sr-only" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+
+        <section class="success" id="success-panel" aria-labelledby="success-title" hidden>
+          <p class="success__wordmark">English Club</p>
+          <span class="success__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path
+                d="M5.5 12.4l4.1 4.1L18.6 7.8"
+                stroke="currentColor"
+                stroke-width="2.2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </span>
+          <p class="success__eyebrow">Registration complete</p>
+          <h1 class="success__title" id="success-title" tabindex="-1">
+            Your registration has been submitted successfully!
+          </h1>
+          <p class="success__text">
+            Welcome to the English Club. The club administration will add your number to the official
+            WhatsApp group shortly.
+          </p>
+          <p class="success__note">You can safely close this page.</p>
+        </section>
+      </section>
+
+      <p class="page-note">Questions? Contact the club administration.</p>
+    </main>
+
+    <noscript>
+      <div class="noscript">
+        Please enable JavaScript to submit your registration, or contact the club administration directly.
+      </div>
+    </noscript>
+  </body>
+</html>
