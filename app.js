@@ -43,8 +43,7 @@ const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
     nonDigits: "Please use digits only — letters and symbols are not allowed.",
     tooShort: "Your phone number must be exactly 8 digits.",
     tooLong: "That number is too long. Please enter exactly 8 digits.",
-    notConfigured:
-      "Registration isn’t available yet. Please contact the club administration.",
+    notConfigured: "Registration isn’t available yet. Please try again later.",
     network:
       "We couldn’t submit your registration. Please check your connection and try again.",
     server:

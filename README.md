@@ -38,12 +38,13 @@ A single JSON field, so it is easy to recognise in Formspree responses or email 
 
 ## Project structure
 
-| File         | Purpose                                                    |
-| ------------ | ---------------------------------------------------------- |
-| `index.html` | Page markup and the registration form                      |
-| `styles.css` | Full design system, layout, and responsive rules           |
-| `app.js`     | Form validation, input formatting, and Formspree submission |
-| `favicon.svg`| Small club emblem used as the browser tab icon             |
+| File                          | Purpose                                                      |
+| ----------------------------- | ------------------------------------------------------------ |
+| `index.html`                  | Page markup and the registration form                        |
+| `styles.css`                  | Full design system, layout, and responsive rules             |
+| `app.js`                      | Form validation, input formatting, and Formspree submission  |
+| `assets/umt-english-logo.png` | Club logo shown on the page (transparent background)         |
+| `assets/favicon.png`          | Club emblem used as the browser tab icon                     |
 
 ## Behaviour
 
@@ -61,5 +62,5 @@ A single JSON field, so it is easy to recognise in Formspree responses or email 
 ## Deploying
 
 The site is static, so any static host works: GitHub Pages, Netlify, Vercel, Cloudflare Pages,
-or a university server. Upload the four files (or point the host at this repository) — there is
+or a university server. Upload the files and the `assets/` folder (or point the host at this repository) — there is
 nothing to compile.
