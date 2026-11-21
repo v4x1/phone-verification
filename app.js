@@ -4,14 +4,14 @@
  * ╔════════════════════════════════════════════════════════════════════════╗
  * ║  CONFIGURATION                                                          ║
  * ║                                                                         ║
- * ║  Paste your Formspree endpoint below, replacing YOUR_FORM_ID.           ║
- * ║  Example: "https://formspree.io/f/abcdwxyz"                             ║
+ * ║  The Formspree endpoint for this club's registration form.              ║
+ * ║  To point the site at a different form, replace the URL below.           ║
  * ║                                                                         ║
  * ║  Formspree endpoints are public form identifiers, not secret keys —      ║
  * ║  no private API key is ever placed in this frontend code.               ║
  * ╚════════════════════════════════════════════════════════════════════════╝
  */
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/mjywavgb";
 
 (function () {
   "use strict";

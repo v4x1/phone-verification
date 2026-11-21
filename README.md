@@ -8,25 +8,27 @@ The site is plain HTML, CSS, and JavaScript — no build step, no framework, and
 
 ## Getting started
 
-1. Open `app.js` and find the configuration block at the top of the file:
+The form is already connected to the club's Formspree form
+([`mjywavgb`](https://formspree.io/f/mjywavgb)). Submissions arrive in that Formspree account,
+which can forward them by email or show them in its dashboard.
 
-   ```js
-   const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
-   ```
+The endpoint is the single configuration point, at the top of `app.js`:
 
-2. Create a form at [formspree.io](https://formspree.io), then replace `YOUR_FORM_ID` with your
-   form's ID (e.g. `https://formspree.io/f/abcdwxyz`).
+```js
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/mjywavgb";
+```
 
-3. Serve the folder with any static server and open it in a browser:
+To use a different form, replace that URL with your own form's endpoint.
 
-   ```bash
-   python3 -m http.server 8000
-   ```
+## Running locally
 
-   Then visit <http://localhost:8000>.
+Serve the folder with any static server and open it in a browser:
 
-> Until a real endpoint is configured, the form deliberately shows an error instead of a
-> success message — it never fakes a submission.
+```bash
+python3 -m http.server 8000
+```
+
+Then visit <http://localhost:8000>. No build step or install is needed.
 
 ## What gets sent
 
