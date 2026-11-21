@@ -4,34 +4,31 @@
    ========================================================================== */
 
 :root {
-  --paper: #f4efe5;
+  --paper: #f4efe6;
   --card: #fffdf8;
-  --field: #fffefb;
+  --field: #fffefa;
 
-  --ink: #15251f;
-  --ink-soft: #4d5c55;
-  --ink-faint: #626f68;
+  --ink: #141d2e;
+  --ink-soft: #4b5464;
+  --ink-faint: #5f6b7c;
 
-  --green-900: #0b4a3a;
-  --green-800: #0d5744;
-  --green-700: #146b54;
-  --green-050: #eef4ef;
+  --navy-900: #092c60;
+  --navy-800: #0b356f;
+  --navy-700: #14417f;
+  --crimson-600: #a51820;
 
-  --gold: #c2a46b;
-  --gold-soft: #e4d5b2;
+  --line: #e2dbcd;
+  --line-strong: #cbc2b1;
 
-  --line: #e0d8c8;
-  --line-strong: #c9c0ad;
+  --danger: #a51820;
+  --danger-bg: #fdf1f0;
+  --danger-line: #e6b4b2;
 
-  --danger: #a63d2c;
-  --danger-bg: #fdf1ee;
-  --danger-line: #e3b3a8;
+  --radius-card: 20px;
+  --radius-field: 11px;
 
-  --radius-card: 22px;
-  --radius-field: 12px;
-
-  --shadow-card: 0 1px 1px rgba(21, 37, 31, 0.04), 0 18px 40px -22px rgba(21, 37, 31, 0.28),
-    0 48px 90px -60px rgba(11, 61, 48, 0.45);
+  --shadow-card: 0 1px 1px rgba(20, 29, 46, 0.04), 0 18px 40px -22px rgba(20, 29, 46, 0.3),
+    0 48px 90px -60px rgba(9, 44, 96, 0.4);
 
   --font-display: "Fraunces", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
   --font-sans: "Instrument Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
@@ -67,7 +64,7 @@ body {
   background-color: var(--paper);
   background-image:
     radial-gradient(1100px 720px at 6% -8%, #fcfaf4 0%, rgba(252, 250, 244, 0) 62%),
-    radial-gradient(950px 680px at 106% 110%, #e6efe6 0%, rgba(230, 239, 230, 0) 64%);
+    radial-gradient(950px 680px at 106% 110%, #e8ecf4 0%, rgba(232, 236, 244, 0) 64%);
   background-attachment: fixed;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -79,7 +76,7 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background-image: radial-gradient(rgba(12, 86, 67, 0.13) 1px, transparent 1.1px);
+  background-image: radial-gradient(rgba(9, 44, 96, 0.12) 1px, transparent 1.1px);
   background-size: 24px 24px;
   -webkit-mask-image: radial-gradient(ellipse 62% 58% at 50% 46%, #000 0%, transparent 78%);
   mask-image: radial-gradient(ellipse 62% 58% at 50% 46%, #000 0%, transparent 78%);
@@ -88,7 +85,7 @@ body::before {
 }
 
 ::selection {
-  background: var(--gold-soft);
+  background: var(--line);
   color: var(--ink);
 }
 
@@ -119,7 +116,7 @@ body::before {
 .ornament {
   position: absolute;
   width: min(640px, 82vmin);
-  color: var(--green-900);
+  color: var(--navy-900);
 }
 
 .ornament--top {
@@ -130,11 +127,6 @@ body::before {
 .ornament--bottom {
   right: -26vmin;
   bottom: -22vmin;
-}
-
-.ornament__gold {
-  stroke: var(--gold);
-  stroke-opacity: 0.55;
 }
 
 /* ==========================================================================
@@ -158,65 +150,29 @@ body::before {
   max-width: 526px;
   padding: clamp(28px, 5vw, 44px);
   background: var(--card);
-  border: 1px solid rgba(201, 192, 173, 0.55);
+  border: 1px solid rgba(203, 194, 177, 0.55);
   border-radius: var(--radius-card);
   box-shadow: var(--shadow-card);
 }
 
-.page-note {
-  margin: 18px 0 0;
-  font-size: 12.5px;
-  letter-spacing: 0.01em;
-  color: #626f68;
-  text-align: center;
-}
-
 /* ==========================================================================
-   Card masthead
+   Card intro
    ========================================================================== */
-
-.masthead__eyebrow {
-  margin: 0 0 22px;
-  font-size: 10.5px;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  text-align: center;
-  color: var(--ink-faint);
-}
 
 .intro {
   text-align: center;
 }
 
-.intro__emblem {
+.intro__logo {
   display: block;
-  width: 58px;
-  height: 58px;
+  width: 100%;
+  max-width: 232px;
+  height: auto;
   margin: 0 auto;
 }
 
-.intro__wordmark {
-  margin: 18px 0 0;
-  font-family: var(--font-display);
-  font-size: 15px;
-  font-weight: 600;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  text-indent: 0.24em;
-  color: var(--green-900);
-}
-
-.intro__rule {
-  display: block;
-  width: 42px;
-  height: 1px;
-  margin: 17px auto 0;
-  background: var(--gold);
-}
-
 .intro__title {
-  margin: 21px 0 12px;
+  margin: 24px 0 10px;
   font-family: var(--font-display);
   font-size: clamp(28px, 5vw, 33px);
   font-weight: 600;
@@ -226,16 +182,11 @@ body::before {
 }
 
 .intro__text {
-  max-width: 40ch;
+  max-width: 34ch;
   margin: 0 auto;
   font-size: 15px;
-  line-height: 1.65;
+  line-height: 1.6;
   color: var(--ink-soft);
-}
-
-.intro__text strong {
-  font-weight: 600;
-  color: var(--ink);
 }
 
 /* ==========================================================================
@@ -287,8 +238,8 @@ body::before {
 
 .phone:focus-within {
   background: #ffffff;
-  border-color: var(--green-700);
-  box-shadow: 0 0 0 4px rgba(20, 107, 84, 0.13);
+  border-color: var(--crimson-600);
+  box-shadow: 0 0 0 4px rgba(165, 24, 32, 0.11);
 }
 
 .phone__prefix {
@@ -395,17 +346,17 @@ body::before {
   font-weight: 600;
   letter-spacing: 0.015em;
   color: #fdfbf4;
-  background: var(--green-900);
-  border: 1px solid rgba(11, 74, 58, 0.9);
+  background: var(--navy-900);
+  border: 1px solid rgba(9, 44, 96, 0.92);
   border-radius: var(--radius-field);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.12) inset, 0 10px 20px -14px rgba(11, 74, 58, 0.8);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.12) inset, 0 10px 20px -14px rgba(9, 44, 96, 0.55);
   cursor: pointer;
   transition: background-color 0.18s ease, transform 0.12s ease, box-shadow 0.18s ease;
   -webkit-tap-highlight-color: transparent;
 }
 
 .submit:hover:not(:disabled) {
-  background: var(--green-800);
+  background: var(--navy-800);
 }
 
 .submit:active:not(:disabled) {
@@ -414,7 +365,7 @@ body::before {
 }
 
 .submit:focus-visible {
-  outline: 2px solid var(--green-700);
+  outline: 2px solid var(--navy-700);
   outline-offset: 3px;
 }
 
@@ -443,25 +394,6 @@ body::before {
   }
 }
 
-/* Privacy note */
-.form__privacy {
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-  margin: 2px 0 0;
-  font-size: 12px;
-  line-height: 1.55;
-  color: var(--ink-faint);
-}
-
-.form__privacy svg {
-  flex: 0 0 auto;
-  width: 14px;
-  height: 14px;
-  margin-top: 2px;
-  color: #7d887f;
-}
-
 /* ==========================================================================
    Success panel
    ========================================================================== */
@@ -472,15 +404,12 @@ body::before {
   animation: rise 0.42s cubic-bezier(0.2, 0.7, 0.3, 1) both;
 }
 
-.success__wordmark {
-  margin: 4px 0 22px;
-  font-family: var(--font-display);
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  text-indent: 0.24em;
-  color: var(--green-900);
+.success__logo {
+  display: block;
+  width: 100%;
+  max-width: 176px;
+  height: auto;
+  margin: 0 auto 22px;
 }
 
 .success__icon {
@@ -491,23 +420,14 @@ body::before {
   height: 56px;
   margin-bottom: 20px;
   color: #fdfbf4;
-  background: var(--green-900);
+  background: var(--navy-900);
   border-radius: 50%;
-  box-shadow: 0 0 0 6px rgba(194, 164, 107, 0.16);
+  box-shadow: 0 0 0 6px rgba(165, 24, 32, 0.1);
 }
 
 .success__icon svg {
   width: 26px;
   height: 26px;
-}
-
-.success__eyebrow {
-  margin: 0 0 8px;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--green-700);
 }
 
 .success__title {
@@ -530,12 +450,6 @@ body::before {
   font-size: 15px;
   line-height: 1.65;
   color: var(--ink-soft);
-}
-
-.success__note {
-  margin: 18px 0 0;
-  font-size: 12.5px;
-  color: var(--ink-faint);
 }
 
 @keyframes rise {
@@ -562,7 +476,7 @@ body::before {
   text-align: center;
   color: var(--ink);
   background: #fff8e9;
-  border: 1px solid var(--gold-soft);
+  border: 1px solid var(--line);
   border-radius: 10px;
 }
 
@@ -584,27 +498,13 @@ body::before {
     border-radius: 18px;
   }
 
-  .masthead__eyebrow {
-    margin-bottom: 18px;
-  }
-
-  .intro__emblem {
-    width: 52px;
-    height: 52px;
-  }
-
-  .intro__wordmark {
-    margin-top: 15px;
-    font-size: 13.5px;
-  }
-
-  .intro__rule {
-    margin-top: 14px;
+  .intro__logo {
+    max-width: 200px;
   }
 
   .intro__title {
-    margin-top: 18px;
-    font-size: clamp(26px, 7.4vw, 30px);
+    margin-top: 20px;
+    font-size: clamp(25px, 7.2vw, 29px);
   }
 
   .intro__text {
@@ -631,11 +531,6 @@ body::before {
   .submit {
     min-height: 52px;
     font-size: 15px;
-  }
-
-  .page-note {
-    margin-top: 14px;
-    font-size: 12px;
   }
 
   .ornament {
